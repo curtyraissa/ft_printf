@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
+/*   hex_pointer_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:40:15 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/29 12:40:38 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:06:01 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	print_address(unsigned long addr)
 	char	*base;
 
 	len = 0;
-	*base = "0123456789abcdef";
+	base = "0123456789abcdef";
 	if (addr >= 16)
 		len += print_address(addr / 16);
 	len += print_char(base[addr % 16]);
