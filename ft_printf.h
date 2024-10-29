@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:52:08 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/28 11:12:27 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:09:58 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,12 @@
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
+int	print_char(char c);
+int	print_str(char *str);
+int	print_nbr(int nbr);
+int	print_unsigned(unsigned int nbr);
+int	print_hex(unsigned int nbr, int lowercase);
+int	print_pointer(unsigned long ptr);
+int	print_address(unsigned long addr);
 
 #endif
