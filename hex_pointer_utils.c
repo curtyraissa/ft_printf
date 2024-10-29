@@ -14,9 +14,10 @@
 
 int	print_hex(unsigned int nbr, int lowercase)
 {
-	int		len = 0;
+	int		len;
 	char	*base;
 
+	len = 0;
 	if (lowercase)
 		base = "0123456789abcdef";
 	else
@@ -29,8 +30,9 @@ int	print_hex(unsigned int nbr, int lowercase)
 
 int	print_pointer(unsigned long ptr)
 {
-	int	len = 0;
+	int	len;
 
+	len = 0;
 	if (!ptr)
 		return (write(1, "(nil)", 5));
 	len += write(1, "0x", 2);
@@ -40,12 +42,13 @@ int	print_pointer(unsigned long ptr)
 
 int	print_address(unsigned long addr)
 {
-	int		len = 0;
-	char	*base = "0123456789abcdef";
+	int		len;
+	char	*base;
 
+	len = 0;
+	*base = "0123456789abcdef";
 	if (addr >= 16)
 		len += print_address(addr / 16);
 	len += print_char(base[addr % 16]);
 	return (len);
 }
-

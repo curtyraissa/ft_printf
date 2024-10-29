@@ -20,8 +20,9 @@ int	print_char(char c)
 
 int	print_str(char *str)
 {
-	int	len = 0;
+	int	len;
 
+	len = 0;
 	if (!str)
 		return (write(1, "(null)", 6));
 	while (*str)
@@ -31,8 +32,9 @@ int	print_str(char *str)
 
 int	print_nbr(int nbr)
 {
-	int		len = 0;
+	int	len;
 
+	len = 0;
 	if (nbr == -2147483648)
 		return (write(1, "-2147483648", 11));
 	if (nbr < 0)
@@ -48,11 +50,11 @@ int	print_nbr(int nbr)
 
 int	print_unsigned(unsigned int nbr)
 {
-	int	len = 0;
+	int	len;
 
+	len = 0;
 	if (nbr >= 10)
 		len += print_unsigned(nbr / 10);
 	len += print_char((nbr % 10) + '0');
 	return (len);
 }
-
