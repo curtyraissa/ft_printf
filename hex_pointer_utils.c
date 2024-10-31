@@ -6,13 +6,13 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:40:15 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/29 15:06:01 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:16:04 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_hex(unsigned int nbr, int lowercase)
+int	print_hex(unsigned int num, int lowercase)
 {
 	int		len;
 	char	*base;
@@ -22,9 +22,9 @@ int	print_hex(unsigned int nbr, int lowercase)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	if (nbr >= 16)
-		len += print_hex(nbr / 16, lowercase);
-	len += print_char(base[nbr % 16]);
+	if (num >= 16)
+		len += print_hex(num / 16, lowercase);
+	len += print_char(base[num % 16]);
 	return (len);
 }
 

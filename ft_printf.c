@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:52:32 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/29 15:04:15 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:50:16 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ int	print_arg(va_list args, char type)
 	return (0);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
 	int		len;
 
-	va_start(args, str);
+	va_start(args, format);
 	i = 0;
 	len = 0;
-	while (str[i])
+	while (format[i])
 	{
-		if (str[i] == '%' && str[i + 1])
-			len += print_arg(args, str[++i]);
+		if (format[i] == '%' && format[i + 1])
+			len += print_arg(args, format[++i]);
 		else
-			len += print_char(str[i]);
+			len += print_char(format[i]);
 		i++;
 	}
 	va_end(args);
